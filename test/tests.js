@@ -122,6 +122,14 @@ describe('Convert to query string', () => {
     expect(QueryState('foo=bar').set('f o o', 'b  a r_x ').toQueryString()).to.eql('?foo=bar&f%20o%20o=b%20%20a%20r_x%20');
     expect(QueryState('a=b').set({ c: 'd', 6: 6, '<': '00' }).toQueryString()).to.eql('?6=6&a=b&c=d&%3C=00');
   });
+
+  it('should return an empty query string when no params left', () => {
+    const state = QueryState('foo=bar');
+    expect(state.all()).to.eql({ foo: 'bar' });
+
+    state.remove('foo');
+    expect(state.toQueryString()).to.eql('');
+  });
 });
 
 describe('Auto applied state', () => {
