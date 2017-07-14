@@ -109,13 +109,34 @@ state.toQueryString();
 ```
 
 ### Config
+
+#### Casts to array
+Sometimes you always want your data to be in a specific way. Let's imagine we have an API where we can limit our result 
+by users by providing an array of the ``user_ids`` that we want. That API endpoint always expects an array, but if we 
+provide just one user in our query string, it will get parsed to a string. But there is an easy way to always cast 
+our data to an array.
+
+```js
+const state = require('querystate')({ castsToArray: true });
+
+// URL: xo.com/?user_ids=2
+state.get('user_id');
+//=> [2]
+
+state.all();
+//=> {
+//=>   user_id: [2],
+//=> }
+```
+
+#### Disable auto updating of ``window.history.pushState``
 If you want to disable auto applying state when using ``set()`` and ``remove()``, you may pass a config to ``querystate``
 ```js
 // Using [window.location.search] as default state
 const state = require('querystate')({ autoApply: false });
 
 // Custom state
-const state = require('querystate')state('?foo=bar', { autoApply: false });
+const state = require('querystate')('?foo=bar', { autoApply: false });
 ```
 
 When setting ``autoApply`` to ``false`` you need to explicitly tell ``querystate`` to update after a change.

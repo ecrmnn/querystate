@@ -174,3 +174,18 @@ describe('Push state query string', () => {
     expect(global.window.location.search).to.eql('?magic=true');
   });
 });
+
+describe('Config: Casts to array', () => {
+  it('should always return as array', () => {
+    expect(QueryState('foo=bar&abc=xyz,123', { castsToArray: true }).get('foo')).to.eql(['bar']);
+    expect(QueryState('foo=bar&abc=xyz,123', { castsToArray: true }).all()).to.eql({
+      foo: ['bar'],
+      abc: ['xyz', '123'],
+    });
+  });
+
+  it('should always return as array, but not defaults', () => {
+    expect(QueryState('foo=bar&abc=xyz,123', { castsToArray: true }).get('xoxo')).to.eql(null);
+    expect(QueryState('foo=bar&abc=xyz,123', { castsToArray: true }).get('xoxo', 0)).to.eql(0);
+  });
+});

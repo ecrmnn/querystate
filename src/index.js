@@ -3,7 +3,10 @@
 function QueryState(queryString, config) {
   let userConfig = config;
   this.queryState = {};
-  this.config = { autoApply: true };
+  this.config = {
+    autoApply: true,
+    castsToArray: false,
+  };
 
   let q = queryString;
 

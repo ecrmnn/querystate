@@ -9,7 +9,10 @@ function QueryState(queryString, config) {
 
   var userConfig = config;
   this.queryState = {};
-  this.config = { autoApply: true };
+  this.config = {
+    autoApply: true,
+    castsToArray: false
+  };
 
   var q = queryString;
 

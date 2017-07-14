@@ -1,6 +1,6 @@
 {
   "name": "querystate",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Simple and dependency free query string state management",
   "main": "dist/index.js",
   "scripts": {
