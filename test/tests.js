@@ -1,7 +1,8 @@
 'use strict';
 
 const expect = require('chai').expect;
-const { describe, it } = require('mocha');
+const it = require('mocha').it;
+const describe = require('mocha').describe;
 const QueryState = require('../dist');
 
 describe('Parsing', () => {
