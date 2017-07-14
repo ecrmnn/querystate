@@ -1,0 +1,51 @@
+{
+  "name": "querystate",
+  "version": "1.0.0",
+  "description": "Simple and dependency free query string state management",
+  "main": "src/index.js",
+  "scripts": {
+    "pretest": "rm -rf dist && npm run transpile",
+    "test": "node_modules/.bin/mocha test/tests.js",
+    "transpile": "node_modules/babel-cli/bin/babel.js src --out-dir dist",
+    "eslint": "node_modules/.bin/eslint src/",
+    "prepublishOnly": "npm run transpile"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ecrmnn/querystate"
+  },
+  "keywords": [
+    "history",
+    "push state",
+    "pushstate",
+    "state",
+    "query string",
+    "querystring",
+    "query strings"
+  ],
+  "author": {
+    "name": "Daniel Eckermann",
+    "email": "danieleckermann@gmail.com",
+    "url": "http://danieleckermann.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ecrmnn/querystate/issues"
+  },
+  "homepage": "https://github.com/ecrmnn/querystate",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-es2015": "^6.24.1",
+    "chai": "^4.0.2",
+    "eslint": "^4.1.1",
+    "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-import": "^2.6.1",
+    "mocha": "^3.4.2"
+  }
+}
