@@ -8,6 +8,8 @@
 [![prs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![eslint](https://img.shields.io/badge/code_style-airbnb-blue.svg?style=flat-square)](https://github.com/airbnb/javascript)
 
+<img src="https://raw.githubusercontent.com/ecrmnn/querystate/master/querystate.gif" alt="querystate">
+
 ### Installation
 ```bash
 npm install querystate --save
