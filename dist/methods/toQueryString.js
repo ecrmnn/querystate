@@ -7,7 +7,7 @@ module.exports = function toQueryString() {
     var value = _this.queryState[key];
 
     if (Array.isArray(value)) {
-      return encodeURIComponent(key) + '=' + encodeURIComponent(value.join(','));
+      return encodeURIComponent(key) + '=' + value.map(encodeURIComponent).join(',');
     }
 
     return encodeURIComponent(key) + '=' + encodeURIComponent(value);
