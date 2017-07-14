@@ -31,16 +31,18 @@ function QueryState(queryString, config) {
 
     const params = string.split('&');
 
-    params.forEach((param) => {
-      const [key, value] = param.split('=').map(decodeURIComponent);
-      const arrayValue = value.split(',');
+    if (params[0].length) {
+      params.forEach((param) => {
+        const [key, value] = param.split('=').map(decodeURIComponent);
+        const arrayValue = value.split(',');
 
-      if (arrayValue.length !== 1) {
-        this.queryState[key] = arrayValue;
-      } else {
-        this.queryState[key] = value;
-      }
-    });
+        if (arrayValue.length !== 1) {
+          this.queryState[key] = arrayValue;
+        } else {
+          this.queryState[key] = value;
+        }
+      });
+    }
   }
 }
 

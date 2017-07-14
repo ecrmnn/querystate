@@ -1,8 +1,8 @@
 {
   "name": "querystate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple and dependency free query string state management",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "pretest": "rm -rf dist && npm run transpile",
     "test": "node_modules/.bin/mocha test/tests.js",

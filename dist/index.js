@@ -37,20 +37,22 @@ function QueryState(queryString, config) {
 
     var params = string.split('&');
 
-    params.forEach(function (param) {
-      var _param$split$map = param.split('=').map(decodeURIComponent),
-          _param$split$map2 = _slicedToArray(_param$split$map, 2),
-          key = _param$split$map2[0],
-          value = _param$split$map2[1];
+    if (params[0].length) {
+      params.forEach(function (param) {
+        var _param$split$map = param.split('=').map(decodeURIComponent),
+            _param$split$map2 = _slicedToArray(_param$split$map, 2),
+            key = _param$split$map2[0],
+            value = _param$split$map2[1];
 
-      var arrayValue = value.split(',');
+        var arrayValue = value.split(',');
 
-      if (arrayValue.length !== 1) {
-        _this.queryState[key] = arrayValue;
-      } else {
-        _this.queryState[key] = value;
-      }
-    });
+        if (arrayValue.length !== 1) {
+          _this.queryState[key] = arrayValue;
+        } else {
+          _this.queryState[key] = value;
+        }
+      });
+    }
   }
 }
 
