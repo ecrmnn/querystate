@@ -11,9 +11,5 @@ module.exports = function toQueryString() {
     return `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
   });
 
-  if (params.length) {
-    return `?${params.join('&')}`;
-  }
-
-  return '';
+  return `?${params.join('&')}`;
 };
