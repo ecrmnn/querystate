@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 const { describe, it } = require('mocha');
-const QueryState = require('../src');
+const QueryState = require('../dist');
 
 describe('Parsing', () => {
   it('should return an empty object when initialized without a value', () => {
