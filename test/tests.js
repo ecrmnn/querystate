@@ -69,6 +69,12 @@ describe('Parsing', () => {
       abc: ['xyz', '123'],
     });
   });
+
+  it('should be able to parse empty value', () => {
+    expect(QueryState('foo').all()).to.eql({
+      foo: null,
+    });
+  });
 });
 
 describe('Retrieving params', () => {
