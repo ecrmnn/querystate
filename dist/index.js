@@ -47,7 +47,7 @@ function QueryState(queryString, config) {
             key = _param$split$map2[0],
             value = _param$split$map2[1];
 
-        var arrayValue = value.split(',');
+        var arrayValue = (value || '').split(',');
 
         if (arrayValue.length !== 1) {
           _this.queryState[key] = arrayValue;

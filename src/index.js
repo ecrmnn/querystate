@@ -37,7 +37,7 @@ function QueryState(queryString, config) {
     if (params[0].length) {
       params.forEach((param) => {
         const [key, value] = param.split('=').map(decodeURIComponent);
-        const arrayValue = value.split(',');
+        const arrayValue = (value || '').split(',');
 
         if (arrayValue.length !== 1) {
           this.queryState[key] = arrayValue;
