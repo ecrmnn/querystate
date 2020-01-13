@@ -71,6 +71,11 @@ describe('Parsing', () => {
   });
 
   it('should be able to parse empty value', () => {
+    expect(QueryState('foo=bar&abc').all()).to.eql({
+      foo: 'bar',
+      abc: null,
+    });
+
     expect(QueryState('foo').all()).to.eql({
       foo: null,
     });
